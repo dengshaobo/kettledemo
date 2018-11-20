@@ -1,0 +1,111 @@
+CREATE TABLE `DA_ZZJG` (
+  `ZZJGBS` int(11) NOT NULL COMMENT '机构标识',
+  `MC` varchar(255) NOT NULL COMMENT '机构名称',
+  `LXDM` int(11) NOT NULL COMMENT '类型代码，2-市局，3-分局，4-所',
+  `SJBS` int(11) DEFAULT NULL COMMENT '上级机构标识，与自身关联',
+  PRIMARY KEY (`ZZJGBS`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='组织机构信息表';
+
+CREATE TABLE `DA_YDKH` (
+  `YHBS` decimal(20,0) NOT NULL COMMENT '用户标识',
+  `MC` varchar(255) DEFAULT NULL COMMENT '用名称',
+  `DZ` varchar(255) DEFAULT NULL COMMENT '地址',
+  `ZZJGBS` int(11) DEFAULT NULL COMMENT '机构标识',
+  `HYFLDM` varchar(45) DEFAULT NULL COMMENT '行业分类代码',
+  `JLJG` int(11) DEFAULT NULL COMMENT '聚类结果',
+  `DYDJDM` int(11) DEFAULT NULL COMMENT '电压等级代码',
+  `YHLBDM` int(11) DEFAULT NULL COMMENT '用户类别代码',
+  `KHFQBZDM` int(11) DEFAULT NULL COMMENT '客户分群标志代码',
+  `HTRL` decimal(8,3) DEFAULT NULL COMMENT '合同容量',
+  `YXRL` decimal(8,3) DEFAULT NULL COMMENT '运行容量',
+  PRIMARY KEY (`YHBS`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用电客户表';
+
+CREATE TABLE `DA_BYQ` (
+  `BYQBS` decimal(20,0) NOT NULL COMMENT '变压器标识',
+  `MC` varchar(255) DEFAULT NULL COMMENT '变压器名称',
+  `DZ` varchar(255) DEFAULT NULL COMMENT '地址',
+  `GPSJD` decimal(14,11) DEFAULT NULL COMMENT 'GPS经度',
+  `GPSWD` decimal(14,11) DEFAULT NULL COMMENT 'GPS纬度',
+  `ZZJGBS` int(11) DEFAULT NULL COMMENT '所属机构标识',
+  `BYQLXDM` int(11) NOT NULL COMMENT '变压器类型代码',
+  `EDRL` decimal(8,3) DEFAULT NULL COMMENT '额定容量',
+  `GYEDDYDM` int(11) DEFAULT NULL COMMENT '高压额定电压等级',
+   `ZYEDDYDM` int(11) DEFAULT NULL COMMENT '中压额定电压等级',
+  `DYEDDYDM` int(11) DEFAULT NULL COMMENT '低压额定电压等级',
+  PRIMARY KEY (`BYQBS`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='变压器表';
+
+CREATE TABLE `DA_JLD` (
+  `JLDBS` decimal(20,0) NOT NULL COMMENT '计量点标识',
+  `MC` varchar(255) DEFAULT NULL COMMENT '计量点名称',
+  `ZZJGBS` int(11) DEFAULT NULL COMMENT '所属机构标识',
+  `PT` decimal(15,4) DEFAULT NULL COMMENT '电压互感器变比',
+  `CT` decimal(15,4) DEFAULT NULL COMMENT '电流互感器变比',
+  `ZHBL` decimal(15,4) DEFAULT NULL COMMENT '综合倍率',
+  `DYDJDM` int(11) DEFAULT NULL COMMENT '电压等级代码，与电压等级表关联',
+  `JLFSDM` int(11) DEFAULT NULL COMMENT '计量方式代码，与的计量方式表关联',
+  `SSCDM` int(11) DEFAULT NULL COMMENT '所属侧代码与所属侧表关联',
+  PRIMARY KEY (`JLDBS`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='计量点表';
+
+CREATE TABLE `GX_JLD_BYQ` (
+  `JLDBS` decimal(20,0) NOT NULL COMMENT '计量点标识',
+  `BYQBS` decimal(20,0) NOT NULL COMMENT '变压器标识',
+  PRIMARY KEY (`JLDBS`,`BYQBS`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='计量点变压器关系';
+
+CREATE TABLE `GX_JLD_YH` (
+  `JLDBS` decimal(20,0) NOT NULL COMMENT '计量点标识',
+  `YHBS` decimal(20,0) NOT NULL COMMENT '用户标识',
+  PRIMARY KEY (`JLDBS`,`YHBS`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='计量点用户关系表';
+
+CREATE TABLE `GX_BYQ_YH` (
+  `BYQBS` decimal(20,0) NOT NULL COMMENT '变压器标识',
+  `YHBS` decimal(20,0) NOT NULL COMMENT '用户标识',
+  PRIMARY KEY (`BYQBS`,`YHBS`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='变压器用户关系';
+
+CREATE TABLE `CJ_P_201701` (
+  `JLDBS` decimal(20,0) NOT NULL COMMENT '计量点标识',
+  `CJSJ` decimal(20,0) NOT NULL COMMENT '采集时间',
+  `PZ` decimal(22,2) DEFAULT NULL COMMENT '有功总功率',
+  `PA` decimal(22,2) DEFAULT NULL COMMENT '有功A相功率',
+  `PB` decimal(22,2) DEFAULT NULL COMMENT '有功B相功率',
+  `PC` decimal(22,2) DEFAULT NULL COMMENT '有功C相功率',
+  `QZ` decimal(22,2) DEFAULT NULL COMMENT '无功总功率',
+  `QA` decimal(22,2) DEFAULT NULL COMMENT '无功A相功率',
+  `QB` decimal(22,2) DEFAULT NULL COMMENT '无功B相功率',
+  `QC` decimal(22,2) DEFAULT NULL COMMENT '无功C相功率',
+  PRIMARY KEY (`JLDBS`,`CJSJ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `CJ_U_201701` (
+  `JLDBS` decimal(20,0) NOT NULL COMMENT '计量点标识',
+  `CJSJ` decimal(20,0) NOT NULL COMMENT '采集时间',
+  `UA` decimal(22,2) DEFAULT NULL COMMENT 'A相电压',
+  `UB` decimal(22,2) DEFAULT NULL COMMENT 'B相电压',
+  `UC` decimal(22,2) DEFAULT NULL COMMENT 'C相电压',
+  PRIMARY KEY (`JLDBS`,`CJSJ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `CJ_I_201701` (
+  `JLDBS` decimal(20,0) NOT NULL COMMENT '计量点标识',
+  `CJSJ` decimal(20,0) NOT NULL COMMENT '采集时间',
+  `IA` decimal(20,2) DEFAULT NULL COMMENT 'A相电流',
+  `IB` decimal(20,2) DEFAULT NULL COMMENT 'B相电流',
+  `IC` decimal(20,2) DEFAULT NULL COMMENT 'C相电流',
+  PRIMARY KEY (`JLDBS`,`CJSJ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `CJ_E_DAY_201701` (
+  `JLDBS` decimal(20,0) NOT NULL COMMENT '计量点标识',
+  `CJSJ` decimal(20,0) NOT NULL COMMENT '采集时间',
+  `ZXYG` decimal(20,2) DEFAULT NULL COMMENT '正向有功',
+  `ZXWG` decimal(20,2) DEFAULT NULL COMMENT '正向无功',
+  `FXYG` decimal(20,2) DEFAULT NULL COMMENT '反向有功',
+  `FXWG` decimal(20,2) DEFAULT NULL COMMENT '反向无功',
+  PRIMARY KEY (`JLDBS`,`CJSJ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+

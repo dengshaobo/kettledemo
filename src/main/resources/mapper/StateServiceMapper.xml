@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.siemens.trm.dao.StateServiceDao">
+    <select id="getTransState" resultType="cn.com.siemens.trm.entities.TransState">
+        select ID_BATCH as id, TRANSNAME as transName, STATUS as state, LOGDATE as triggerTime
+        from trans_log
+        where TRANSNAME = #{transName}
+    </select>
+
+    <select id="getJobState" resultType="cn.com.siemens.trm.entities.JobState">
+        select ID_JOB as id, JOBNAME as jobName, STATUS as state, LOGDATE as triggerTime
+        from job_log
+        where JOBNAME = #{jobName}
+    </select>
+</mapper>

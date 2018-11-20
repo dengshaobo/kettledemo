@@ -1,0 +1,73 @@
+[2018-11-20 14:02:20] INFO  org.springframework.boot.StartupInfoLogger 48 logStarting - Starting Application on fanyang with PID 9460 (F:\trm_etl\target\classes started by fanyang in F:\trm_etl)
+[2018-11-20 14:02:20] INFO  org.springframework.boot.SpringApplication 593 logStartupProfileInfo - No active profile set, falling back to default profiles: default
+[2018-11-20 14:02:20] INFO  org.springframework.context.support.AbstractApplicationContext 583 prepareRefresh - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7d67791b: startup date [Tue Nov 20 14:02:20 CST 2018]; root of context hierarchy
+[2018-11-20 14:02:23] INFO  org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker 325 postProcessAfterInitialization - Bean 'org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration' of type [org.springframework.amqp.rabbit.annotation.RabbitBootstrapConfiguration$$EnhancerBySpringCGLIB$$28637316] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+[2018-11-20 14:02:24] INFO  org.eclipse.jetty.util.log.Log 192 initialized - Logging initialized @6400ms to org.eclipse.jetty.util.log.Slf4jLog
+[2018-11-20 14:02:24] INFO  org.springframework.boot.context.embedded.jetty.JettyEmbeddedServletContainerFactory 176 getEmbeddedServletContainer - Server initialized with port: 8080
+[2018-11-20 14:02:24] INFO  org.eclipse.jetty.server.Server 372 doStart - jetty-9.4.6.v20170531
+[2018-11-20 14:02:24] INFO  org.eclipse.jetty.server.session.DefaultSessionIdManager 364 doStart - DefaultSessionIdManager workerName=node0
+[2018-11-20 14:02:24] INFO  org.eclipse.jetty.server.session.DefaultSessionIdManager 369 doStart - No SessionScavenger set, using defaults
+[2018-11-20 14:02:24] INFO  org.eclipse.jetty.server.session.HouseKeeper 149 startScavenging - Scavenging every 600000ms
+[2018-11-20 14:02:24] INFO  org.eclipse.jetty.server.handler.ContextHandler$Context 2221 log - Initializing Spring embedded WebApplicationContext
+[2018-11-20 14:02:24] INFO  org.springframework.boot.context.embedded.EmbeddedWebApplicationContext 276 prepareEmbeddedWebApplicationContext - Root WebApplicationContext: initialization completed in 4468 ms
+[2018-11-20 14:02:25] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean 190 onStartup - Mapping servlet: 'dispatcherServlet' to [/]
+[2018-11-20 14:02:25] INFO  org.springframework.boot.web.servlet.ServletRegistrationBean 190 onStartup - Mapping servlet: 'statViewServlet' to [/druid/*]
+[2018-11-20 14:02:25] INFO  org.springframework.boot.web.servlet.AbstractFilterRegistrationBean 258 configure - Mapping filter: 'characterEncodingFilter' to: [/*]
+[2018-11-20 14:02:25] INFO  org.springframework.boot.web.servlet.AbstractFilterRegistrationBean 258 configure - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+[2018-11-20 14:02:25] INFO  org.springframework.boot.web.servlet.AbstractFilterRegistrationBean 258 configure - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+[2018-11-20 14:02:25] INFO  org.springframework.boot.web.servlet.AbstractFilterRegistrationBean 258 configure - Mapping filter: 'requestContextFilter' to: [/*]
+[2018-11-20 14:02:25] INFO  org.springframework.boot.web.servlet.AbstractFilterRegistrationBean 271 configure - Mapping filter: 'webStatFilter' to urls: [/*]
+[2018-11-20 14:02:25] INFO  org.eclipse.jetty.server.handler.ContextHandler 788 doStart - Started o.s.b.c.e.j.JettyEmbeddedWebAppContext@6a03615e{/,[file:///C:/Users/fanyang/AppData/Local/Temp/jetty-docbase.1966098610037847823.8080/],AVAILABLE}
+[2018-11-20 14:02:25] INFO  org.eclipse.jetty.server.Server 444 doStart - Started @7572ms
+[2018-11-20 14:02:28] INFO  com.alibaba.druid.pool.DruidDataSource 930 init - {dataSource-1} inited
+[2018-11-20 14:02:28] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean 349 createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default'
+[2018-11-20 14:02:28] INFO  org.hibernate.Version 37 logVersion - HHH000412: Hibernate Core {5.0.12.Final}
+[2018-11-20 14:02:29] INFO  org.hibernate.cfg.Environment 213 <clinit> - HHH000206: hibernate.properties not found
+[2018-11-20 14:02:29] INFO  org.hibernate.cfg.Environment 317 buildBytecodeProvider - HHH000021: Bytecode provider name : javassist
+[2018-11-20 14:02:29] INFO  org.hibernate.annotations.common.reflection.java.JavaReflectionManager 66 <clinit> - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[2018-11-20 14:02:29] INFO  org.hibernate.dialect.Dialect 156 <init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+[2018-11-20 14:02:29] INFO  org.springframework.orm.jpa.AbstractEntityManagerFactoryBean 379 buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2018-11-20 14:02:31] INFO  org.apache.commons.vfs2.VfsLog 136 info - Using "C:\Users\fanyang\AppData\Local\Temp\vfs_cache" as temporary files store.
+[2018-11-20 14:02:33] INFO  org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter 534 initControllerAdviceCache - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@7d67791b: startup date [Tue Nov 20 14:02:20 CST 2018]; root of context hierarchy
+[2018-11-20 14:02:33] INFO  org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry 543 register - Mapped "{[/hello]}" onto public java.lang.String cn.com.siemens.trm.controller.DatabaseMetaController.index()
+[2018-11-20 14:02:33] INFO  org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry 543 register - Mapped "{[/db]}" onto public java.lang.String cn.com.siemens.trm.controller.DatabaseMetaController.getDatabaseById(int)
+[2018-11-20 14:02:33] INFO  org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry 543 register - Mapped "{[/log/steplog/{transName}/{stepName}]}" onto public java.lang.String cn.com.siemens.trm.controller.LogServiceController.steplog(java.lang.String,java.lang.String)
+[2018-11-20 14:02:33] INFO  org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry 543 register - Mapped "{[/log/joblog/{jobName}],methods=[GET]}" onto public java.lang.String cn.com.siemens.trm.controller.LogServiceController.joblog(java.lang.String)
+[2018-11-20 14:02:33] INFO  org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry 543 register - Mapped "{[/log/translog/{transName}],methods=[GET]}" onto public java.lang.String cn.com.siemens.trm.controller.LogServiceController.translog(java.lang.String)
+[2018-11-20 14:02:33] INFO  org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry 543 register - Mapped "{[/log/jobentrylog/{stepName}],methods=[GET]}" onto public java.lang.String cn.com.siemens.trm.controller.LogServiceController.jobEntryLog(java.lang.String)
+[2018-11-20 14:02:33] INFO  org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry 543 register - Mapped "{[/rabbitmq/{projectName}/log/trans/{transName}],methods=[GET]}" onto public void cn.com.siemens.trm.controller.RabbitmqController.transLog(java.lang.String,java.lang.String)
+[2018-11-20 14:02:33] INFO  org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry 543 register - Mapped "{[/rabbitmq/{projectName}/status/trans/{transName}],methods=[GET]}" onto public void cn.com.siemens.trm.controller.RabbitmqController.transStatus(java.lang.String,java.lang.String)
+[2018-11-20 14:02:33] INFO  org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry 543 register - Mapped "{[/rabbitmq/{projectName}/status/job/{jobName}],methods=[GET]}" onto public void cn.com.siemens.trm.controller.RabbitmqController.jobStatus(java.lang.String,java.lang.String)
+[2018-11-20 14:02:33] INFO  org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry 543 register - Mapped "{[/rabbitmq/{projectName}/log/job/{jobName}],methods=[GET]}" onto public void cn.com.siemens.trm.controller.RabbitmqController.jobLog(java.lang.String,java.lang.String)
+[2018-11-20 14:02:33] INFO  org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry 543 register - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+[2018-11-20 14:02:33] INFO  org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry 543 register - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+[2018-11-20 14:02:34] INFO  org.springframework.web.servlet.handler.AbstractUrlHandlerMapping 362 registerHandler - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2018-11-20 14:02:34] INFO  org.springframework.web.servlet.handler.AbstractUrlHandlerMapping 362 registerHandler - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2018-11-20 14:02:34] INFO  org.springframework.web.servlet.handler.AbstractUrlHandlerMapping 362 registerHandler - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+[2018-11-20 14:02:35] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer 58 startServer - LiveReload server is running on port 35729
+[2018-11-20 14:02:36] INFO  org.springframework.jmx.export.MBeanExporter 431 afterSingletonsInstantiated - Registering beans for JMX exposure on startup
+[2018-11-20 14:02:36] INFO  org.springframework.jmx.export.MBeanExporter 916 autodetect - Bean with name 'trmDataSource' has been autodetected for JMX exposure
+[2018-11-20 14:02:36] INFO  org.springframework.jmx.export.MBeanExporter 916 autodetect - Bean with name 'repositoryDataSource' has been autodetected for JMX exposure
+[2018-11-20 14:02:36] INFO  org.springframework.jmx.export.MBeanExporter 916 autodetect - Bean with name 'statFilter' has been autodetected for JMX exposure
+[2018-11-20 14:02:36] INFO  org.springframework.jmx.export.MBeanExporter 916 autodetect - Bean with name 'rabbitConnectionFactory' has been autodetected for JMX exposure
+[2018-11-20 14:02:36] INFO  org.springframework.jmx.export.MBeanExporter 671 registerBeanInstance - Located MBean 'trmDataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=trmDataSource,type=DruidDataSourceWrapper]
+[2018-11-20 14:02:36] INFO  org.springframework.jmx.export.MBeanExporter 671 registerBeanInstance - Located MBean 'repositoryDataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=repositoryDataSource,type=DruidDataSourceWrapper]
+[2018-11-20 14:02:36] INFO  org.springframework.jmx.export.MBeanExporter 678 registerBeanInstance - Located managed bean 'rabbitConnectionFactory': registering with JMX server as MBean [org.springframework.amqp.rabbit.connection:name=rabbitConnectionFactory,type=CachingConnectionFactory]
+[2018-11-20 14:02:36] INFO  org.springframework.jmx.export.MBeanExporter 671 registerBeanInstance - Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+[2018-11-20 14:02:36] INFO  org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup 343 start - Starting beans in phase -2147482648
+[2018-11-20 14:02:36] INFO  org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup 343 start - Starting beans in phase 2147483647
+[2018-11-20 14:02:36] INFO  org.eclipse.jetty.server.handler.ContextHandler$Context 2221 log - Initializing Spring FrameworkServlet 'dispatcherServlet'
+[2018-11-20 14:02:36] INFO  org.springframework.web.servlet.FrameworkServlet 489 initServletBean - FrameworkServlet 'dispatcherServlet': initialization started
+[2018-11-20 14:02:36] INFO  org.springframework.web.servlet.FrameworkServlet 508 initServletBean - FrameworkServlet 'dispatcherServlet': initialization completed in 63 ms
+[2018-11-20 14:02:36] INFO  org.eclipse.jetty.server.AbstractConnector 280 doStart - Started ServerConnector@52cbdf6c{HTTP/1.1,[http/1.1]}{0.0.0.0:8080}
+[2018-11-20 14:02:36] INFO  org.springframework.boot.context.embedded.jetty.JettyEmbeddedServletContainer 155 start - Jetty started on port(s) 8080 (http/1.1)
+[2018-11-20 14:02:36] INFO  org.springframework.boot.StartupInfoLogger 57 logStarted - Started Application in 16.587 seconds (JVM running for 18.354)
+[2018-11-20 14:02:44] INFO  cn.com.siemens.trm.commons.DataSourceAspect 35 setDataSource - 使用默认数据源：TRM
+[2018-11-20 14:02:44] INFO  cn.com.siemens.trm.commons.DataSourceAspect 43 after - 当前数据源：TRM, 执行清理方法。
+[2018-11-20 14:02:44] INFO  org.springframework.amqp.rabbit.connection.AbstractConnectionFactory 360 createBareConnection - Created new connection: rabbitConnectionFactory#2f55f44:0/SimpleConnection@581f606 [delegate=amqp://fanyang@192.168.1.102:5672/, localPort= 58199]
+[2018-11-20 14:03:17] INFO  cn.com.siemens.trm.commons.DataSourceAspect 35 setDataSource - 使用默认数据源：TRM
+[2018-11-20 14:03:17] INFO  cn.com.siemens.trm.commons.DataSourceAspect 43 after - 当前数据源：TRM, 执行清理方法。
+[2018-11-20 14:03:27] INFO  cn.com.siemens.trm.commons.DataSourceAspect 35 setDataSource - 使用默认数据源：TRM
+[2018-11-20 14:03:27] INFO  cn.com.siemens.trm.commons.DataSourceAspect 43 after - 当前数据源：TRM, 执行清理方法。
+[2018-11-20 14:03:31] INFO  cn.com.siemens.trm.commons.DataSourceAspect 35 setDataSource - 使用默认数据源：TRM
+[2018-11-20 14:03:31] INFO  cn.com.siemens.trm.commons.DataSourceAspect 43 after - 当前数据源：TRM, 执行清理方法。

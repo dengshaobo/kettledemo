@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.siemens.trm.dao.LogServiceDao">
+    <select id="getJobEntryLog" resultType="cn.com.siemens.trm.entities.JobEntryLog">
+        select ID_BATCH        as id_batch,
+               CHANNEL_ID      as channel_id,
+               LOG_DATE        as log_date,
+               TRANSNAME       as transName,
+               STEPNAME        as stepName,
+               LINES_READ      as lines_read,
+               LINES_WRITTEN   as lines_written,
+               LINES_UPDATED   as lines_updated,
+               LINES_INPUT     as lines_input,
+               LINES_OUTPUT    as lines_output,
+               LINES_REJECTED  as lines_rejected,
+               ERRORS          as errors,
+               RESULT          as result,
+               NR_RESULT_ROWS  as nr_result_rows,
+               NR_RESULT_FILES as nr_result_files,
+               LOG_FIELD       as log_field
+        from job_entry_log
+        where STEPNAME = #{stepname}
+    </select>
+
+    <select id="getJobLog" resultType="cn.com.siemens.trm.entities.JobLog">
+        select ID_JOB         as id_job,
+               CHANNEL_ID     as channel_id,
+               JOBNAME        as jobName,
+               STATUS            status,
+               LINES_READ     as lines_read,
+               LINES_WRITTEN  as lines_written,
+               LINES_UPDATED  as lines_updated,
+               LINES_INPUT    as lines_input,
+               LINES_OUTPUT   as lines_output,
+               LINES_REJECTED as lines_rejected,
+               ERRORS         as errors,
+               STARTDATE      as startdate,
+               ENDDATE        as enddate,
+               LOGDATE        as logdate,
+               DEPDATE        as depdate,
+               REPLAYDATE     as replaydate,
+               LOG_FIELD      as log_field
+        from job_log
+        where JOBNAME = #{jobName}
+    </select>
+
+    <select id="getTransLog" resultType="cn.com.siemens.trm.entities.TransLog">
+        select ID_BATCH      as id_batch,
+               CHANNEL_ID    as channel_id,
+               TRANSNAME     as transname,
+               STATUS           status,
+               LINES_READ    as lines_read,
+               LINES_WRITTEN as lines_written,
+               LINES_UPDATED as lines_updated,
+               LINES_INPUT   as lines_input,
+               LINES_OUTPUT  as lines_output,
+               ERRORS        as errors,
+               STARTDATE     as startdate,
+               ENDDATE       as enddate,
+               LOGDATE       as logdate,
+               DEPDATE       as depdate,
+               REPLAYDATE    as replaydate,
+               LOG_FIELD     as log_field
+        from trans_log
+        where TRANSNAME = #{transname}
+    </select>
+
+    <select id="getStepLog" resultType="cn.com.siemens.trm.entities.StepLog">
+        select ID_BATCH       as id_batch,
+               CHANNEL_ID     as channel_id,
+               LOG_DATE       as logdate,
+               TRANSNAME      as transname,
+               STEPNAME       as stepname,
+               STEP_COPY      as step_copy,
+               LINES_READ     as lines_read,
+               LINES_WRITTEN  as lines_written,
+               LINES_UPDATED  as lines_updated,
+               LINES_INPUT    as lines_input,
+               LINES_OUTPUT   as lines_output,
+               LINES_REJECTED as lines_rejected,
+               ERRORS         as errors,
+               LOG_FIELD      as log_field
+        from step_log
+        where TRANSNAME = #{transname} AND STEPNAME = #{stepname}
+    </select>
+</mapper>

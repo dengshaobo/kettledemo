@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.siemens.trm.dao.DatabaseMetaDao">
+    <sql id="databaseMetaCols">
+        ${alias}.ID_DATABASE as id_database, ${alias}.NAME as name, ${alias}.ID_DATABASE_TYPE as id_database_type,
+        ${alias}.ID_DATABASE_CONTYPE as id_database_contype,${alias}.HOST_NAME as host_name,
+        ${alias}.DATABASE_NAME as database_name, ${alias}.PORT as port, ${alias}.USERNAME as username,
+        ${alias}.PASSWORD as password , ${alias}.SERVERNAME as servername,
+        ${alias}.DATA_TBS as data_tbs, ${alias}.INDEX_TBS as index_tbs
+    </sql>
+    <select id="getDatabaseMeta" parameterType="int" resultType="cn.com.siemens.trm.entities.DatabaseMeta">
+        select
+        <include refid="databaseMetaCols">
+            <property name="alias" value="r"/>
+        </include>
+        from r_database r where ID_DATABASE = #{id}
+    </select>
+
+    <insert id="insertDatabaseMeta" parameterType="cn.com.siemens.trm.entities.DatabaseMeta" useGeneratedKeys="true">
+        insert into r_database(NAME, ID_DATABASE_TYPE, ID_DATABASE_CONTYPE, HOST_NAME, DATABASE_NAME, PORT,
+        USERNAME,PASSWORD) values
+        (
+        #{name},#{id_database_type},#{id_database_contype},#{host_name},#{database_name},#{port},#{username},#{password})
+    </insert>
+
+    <update id="updateDatabaseMeta" parameterType="cn.com.siemens.trm.entities.DatabaseMeta">
+        update r_database set NAME = #{name}, ID_DATABASE_TYPE = #{id_database_type}, ID_DATABASE_CONTYPE =
+        #{id_database_contype},
+        HOST_NAME = #{host_name}, DATABASE_NAME = #{database_name}, PORT = #{port}, SERVERNAME = #{servername}, DATA_TBS
+        = #{data_tbs},
+        INDEX_TBS = #{index_tbs}
+        where ID_DATABASE = #{id_database}
+    </update>
+
+    <delete id="deleteDatabaseMeta" parameterType="int">
+        delete from r_database where ID_DATABASE = #{id_database}
+    </delete>
+    <!--<delete id="deleteAllDatabaseMeta">-->
+    <!--delete from r_database-->
+    <!--</delete>-->
+</mapper>
